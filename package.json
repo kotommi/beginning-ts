@@ -1,0 +1,21 @@
+{
+  "name": "tasa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ts-node": "ts-node",
+    "bmiCalculator": "ts-node bmiCalculator.ts",
+    "extest": "ts-node exerciseCalculator.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/parser": "^5.58.0",
+    "eslint": "^8.38.0",
+    "prettier": "^2.8.7",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  }
+}
