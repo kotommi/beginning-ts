@@ -47,4 +47,4 @@ try {
   console.log(emsg)
 }
 */
-export {calculateBmi};
+export {calculateBmi, parseArguments};
