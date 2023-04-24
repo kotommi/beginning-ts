@@ -6,15 +6,22 @@ interface BMIValues {
 const parseArguments = (args: string[]): BMIValues => {
     if (args.length < 4) throw new Error('Not enough arguments');
     if (args.length > 4) throw new Error('Too many arguments');
-  
+    let nums;
     if (!isNaN(Number(args[2])) && !isNaN(Number(args[3]))) {
-      return {
+      nums  = {
         height: Number(args[2]),
         weight: Number(args[3])
       }
     } else {
       throw new Error('Provided values were not numbers!');
     }
+    if (nums.height < 100 || nums.height > 250) {
+      throw new Error('Provide height in centimeters');
+    }
+    if (nums.weight < 10 || nums.weight > 300) {
+      throw new Error('Provide weight in kg');
+    }
+    return nums;
   }
 
 const calculateBmi = (height: number, weight: number):String => {
@@ -27,7 +34,7 @@ const calculateBmi = (height: number, weight: number):String => {
     }
     return "Obese"
 }
-
+/** 
 try {
   const {height, weight} = parseArguments(process.argv);
   const result = calculateBmi(height, weight);
@@ -39,3 +46,5 @@ try {
   }
   console.log(emsg)
 }
+*/
+export {calculateBmi};
