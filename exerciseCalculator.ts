@@ -21,9 +21,16 @@ const parseArgs = (args: string[]): exValues => {
     if (isNaN(target)) {
         throw new Error("Target hours must be a number");
     }
+    if (target < 0) {
+        throw new Error("Target hours cant be negative");
+    }
     const hours = args.slice(3).map(Number)
-    if(hours.find(h => isNaN(h))) {
-        throw new Error("Training hours must be a list of numbers")
+    if(hours.some(isNaN)) {
+        throw new Error("Training hours must be a list of numbers");
+    }
+    console.log(hours.find(h => isNaN(h)));
+    if (hours.find(h => h < 0)) {
+        throw new Error("Training hours can't be negative");
     }
     return {target, hours}
 }
