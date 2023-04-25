@@ -11,7 +11,7 @@ const parseArguments = (args: string[]): BMIValues => {
       nums  = {
         height: Number(args[2]),
         weight: Number(args[3])
-      }
+      };
     } else {
       throw new Error('Provided values were not numbers!');
     }
@@ -22,18 +22,18 @@ const parseArguments = (args: string[]): BMIValues => {
       throw new Error('Provide weight in kg');
     }
     return nums;
-  }
+  };
 
-const calculateBmi = (height: number, weight: number):String => {
-    const bmi = weight / ((height / 100)**2)
+const calculateBmi = (height: number, weight: number): string => {
+    const bmi = weight / ((height / 100)**2);
     if (bmi <= 25) {
-        return "Normal (healthy weight)"
+        return "Normal (healthy weight)";
     }
     if (bmi <= 29) {
-        return "Overweight"
+        return "Overweight";
     }
-    return "Obese"
-}
+    return "Obese";
+};
 /** 
 try {
   const {height, weight} = parseArguments(process.argv);

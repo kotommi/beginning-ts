@@ -17,14 +17,14 @@ const parseArgs = (args: string[]): exValues => {
     if (args.length < 4) {
         throw new Error("Too few arguments");
     }
-    const target = Number(args[2])
+    const target = Number(args[2]);
     if (isNaN(target)) {
         throw new Error("Target hours must be a number");
     }
     if (target < 0) {
         throw new Error("Target hours cant be negative");
     }
-    const hours = args.slice(3).map(Number)
+    const hours = args.slice(3).map(Number);
     if(hours.some(isNaN)) {
         throw new Error("Training hours must be a list of numbers");
     }
@@ -32,8 +32,8 @@ const parseArgs = (args: string[]): exValues => {
     if (hours.find(h => h < 0)) {
         throw new Error("Training hours can't be negative");
     }
-    return {target, hours}
-}
+    return {target, hours};
+};
 
 const calculateExercises = (target: number, hours: number[]): Result => {
     console.log(process.argv);
@@ -54,16 +54,16 @@ const calculateExercises = (target: number, hours: number[]): Result => {
 
 
     return { periodLength, trainingDays, success, rating, ratingDescription, target, average };
-}
+};
 
 try {
     const {target, hours} = parseArgs(process.argv);
     const result = calculateExercises(target, hours);
-    console.log(result)
+    console.log(result);
   } catch (error: unknown) {
     let emsg = "Something broke: ";
     if (error instanceof Error) {
       emsg += error.message;
     }
-    console.log(emsg)
+    console.log(emsg);
   }

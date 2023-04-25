@@ -10,14 +10,20 @@
     "bmiCalculator": "ts-node bmiCalculator.ts",
     "extest": "ts-node exerciseCalculator.ts",
     "bmi": "ts-node bmiCalculator.ts",
-    "calculateExercises": "ts-node exerciseCalculator.ts"
+    "calculateExercises": "ts-node exerciseCalculator.ts",
+    "lint": "eslint --ext .ts ."
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/express": "^4.17.17",
-    "@typescript-eslint/parser": "^5.58.0",
-    "eslint": "^8.38.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "eslint": "^8.39.0",
+    "eslint-config-standard-with-typescript": "^34.0.1",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1",
     "prettier": "^2.8.7",
     "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
