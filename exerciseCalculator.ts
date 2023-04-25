@@ -35,7 +35,7 @@ const parseArgs = (args: string[]): exValues => {
     return {target, hours};
 };
 
-const calculateExercises = (target: number, hours: number[]): Result => {
+export const calculateExercises = (target: number, hours: number[]): Result => {
     console.log(process.argv);
     const periodLength = hours.length;
     const trainingDays = hours.filter(n => n > 0).length;
