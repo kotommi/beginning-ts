@@ -30,7 +30,7 @@ app.get("/bmi", (req, res) => {
 
 app.post("/exercises", (req, res) => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
-    const body: any = Number(req.body);
+    const body: any = req.body;
     console.log(body);
     //console.log(req);
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
