@@ -35,7 +35,7 @@ const parseArgs = (args: string[]): exValues => {
     return {target, hours};
 };
 
-export const calculateExercises = (target: number, hours: number[]): Result => {
+const calculateExercises = (target: number, hours: number[]): Result => {
     console.log(process.argv);
     const periodLength = hours.length;
     const trainingDays = hours.filter(n => n > 0).length;
@@ -56,7 +56,10 @@ export const calculateExercises = (target: number, hours: number[]): Result => {
     return { periodLength, trainingDays, success, rating, ratingDescription, target, average };
 };
 
+export {parseArgs, calculateExercises};
+/*
 try {
+    console.log("hi");
     const {target, hours} = parseArgs(process.argv);
     const result = calculateExercises(target, hours);
     console.log(result);
@@ -66,4 +69,4 @@ try {
       emsg += error.message;
     }
     console.log(emsg);
-  }
+  }*/

@@ -28,13 +28,15 @@ app.get("/bmi", (req, res) => {
     res.json({weight, height, bmi});
 });
 
-app.post("/calculate", (req, res) => {
+app.post("/exercises", (req, res) => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
     const body: any = Number(req.body);
+    console.log(body);
+    //console.log(req);
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
     const target = Number(body.target);
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
-    const hours: number[] = body.hours;
+    const hours: number[] = body["daily_exercises"];
     if (!target || !hours) {
         res.status(500).json({
             error: "parameters missing"
@@ -48,8 +50,8 @@ app.post("/calculate", (req, res) => {
         });
         return;
     }
-    
-    const result = calculateExercises(target, hours.map(Number));
+
+    const result = calculateExercises(target, nums);
     res.json(result);
 });
 
